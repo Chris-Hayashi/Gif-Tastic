@@ -12,4 +12,8 @@
 
     //Give the button a text content equal to the string
 
+    //Append the button to #buttons
+
 //Create an onClick event for the buttons
+
+//Create an onClick event for the submit
