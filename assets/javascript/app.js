@@ -38,21 +38,27 @@ $(document).on("click", ".button", function() {
     //Create a variable to store the query URL
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=10&api_key=";
 
+    //Create an ajax call for the queryURL
     $.ajax({
         url: queryURL + apiKey,
         method: "GET"
     }).then(function(response) {
+
         console.log(response);
         
         //Create a for loop iterating 10 times
         for (var i = 0; i < 10; i++){
             
-            //Append the giphy image
+            //Create a section tag for each gif
+            var newSection = $("<section>");
             
+            //Append the still giphy image to the section tag
+            newSection.append("<img src=" + response.data[i].images.fixed_height_still.url + ">");
             
             //Append the giphy rating
             
-            //
+            //Append the newSection to #gifs
+            $("#gifs").append(newSection);
         }
     });
 });
