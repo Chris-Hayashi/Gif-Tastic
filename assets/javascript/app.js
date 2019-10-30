@@ -45,14 +45,15 @@ $(document).on("click", ".button", function() {
         console.log(response);
         
         //Create a for loop iterating 10 times
-        // for (var i = 0; i < 10; i++){
+        for (var i = 0; i < 10; i++){
             
             //Append the giphy image
+            
             
             //Append the giphy rating
             
             //
-        // }
+        }
     });
 });
 
