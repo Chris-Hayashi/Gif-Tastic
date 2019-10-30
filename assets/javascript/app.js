@@ -19,7 +19,8 @@ function makeButtons() {
         newButton.addClass("button");
         
         //Append the button to #buttons
-        $("#button").append(newButton);
+        $("#buttons").append(newButton);
+
     }
 
     //Empty the array
@@ -44,12 +45,14 @@ $(document).on("click", ".button", function() {
         console.log(response);
         
         //Create a for loop iterating 10 times
-        
-        //Append the giphy image
-        
-        //Append the giphy rating
-        
-        //
+        // for (var i = 0; i < 10; i++){
+            
+            //Append the giphy image
+            
+            //Append the giphy rating
+            
+            //
+        // }
     });
 });
 
@@ -61,3 +64,4 @@ $(document).on("click", ".button", function() {
 
 //Create an OnClick event for the giphy images
 
+makeButtons();
