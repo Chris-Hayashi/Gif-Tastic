@@ -10,10 +10,10 @@ function makeButtons() {
         var newButton = $("<button>");
         
         //Give the button a val() equal to the string
-        newButton.val(animals[0]);
+        newButton.val(animals[i]);
         
         //Give the button a text content equal to the string
-        newButton.text(animals[0]);
+        newButton.text(animals[i]);
         
         //give each button a class i.e. button1, button2, etc.
         newButton.addClass("button");
@@ -29,14 +29,14 @@ function makeButtons() {
 //Create an onClick event for the buttons
 $(document).on("click", ".button", function() {
 
+    //Create a variable equal to the value of the button clicked
+    var animal = $(this).val();
+
     //Create a variable to store the API key
     var apiKey = "116WLag9WzHVmZuA8ZFkWR4Y84P6QQOe";
     
     //Create a variable to store the query URL
-    var queryURL = "api.giphy.com/v1/gifs/search?q=" + button + "&limit=10&api_key=";
-    
-    //Create a variable equal to the value of the button clicked
-    var button = this.val();
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=10&api_key=";
 
     $.ajax({
         url: queryURL + apiKey,
