@@ -1,6 +1,12 @@
 //Create a variable called topics to store an array of strings
 var animals = ["dogs", "cats", "lizards", "turtles", "alligators", "giraffes", "elephants"];
 
+//Create a variable to store the API key
+var apiKey = "116WLag9WzHVmZuA8ZFkWR4Y84P6QQOe";
+
+//Create a variable to store the query URL
+var queryURL = ["https://api.giphy.com/v1/gifs/search?q=", "&limit=10&api_key="];
+
 function makeButtons() {
 
     //Create a for loop to iterate through topics
@@ -32,15 +38,9 @@ $(document).on("click", ".button", function() {
     //Create a variable equal to the value of the button clicked
     var animal = $(this).val();
 
-    //Create a variable to store the API key
-    var apiKey = "116WLag9WzHVmZuA8ZFkWR4Y84P6QQOe";
-    
-    //Create a variable to store the query URL
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&limit=10&api_key=";
-
     //Create an ajax call for the queryURL
     $.ajax({
-        url: queryURL + apiKey,
+        url: queryURL.join(animal) + apiKey,
         method: "GET"
     }).then(function(response) {
 
@@ -51,12 +51,25 @@ $(document).on("click", ".button", function() {
             
             //Create a section tag for each gif
             var newSection = $("<section>");
+
+            //Create an image tag for each gif
+            var newGif = $("<img>");
+
+            //Give newGif a class
+            newGif.addClass("gif");
+
+            //Give newSection a data attr equal to the active gif url
+            newGif.data("moveGif", response.data[i].images.fixed_height.url);
             
             //Append the still giphy image to the section tag
-            newSection.append("<img src=" + response.data[i].images.fixed_height_still.url + ">");
+            
+            newGif.attr("src", response.data[i].images.fixed_height_still.url);
             
             //Append the giphy rating
             
+            //Append newGif to newSection
+            newSection.append(newGif);
+
             //Append the newSection to #gifs
             $("#gifs").append(newSection);
         }
@@ -69,6 +82,16 @@ $(document).on("click", ".button", function() {
 
     //call NEWBUTTONS()
 
-//Create an OnClick event for the giphy images
+// Create an OnClick event for the giphy images
+$(document).on("click", ".gif", function() {
+
+    var temp = $(this).data("moveGif");
+    $(this).data("moveGif", $(this).attr("src"));
+    $(this).attr("src", temp);
+
+});
+
+
+
 
 makeButtons();
