@@ -95,8 +95,13 @@ $("#submit").on("click", function(event) {
 // Create an OnClick event for the giphy images
 $(document).on("click", ".gif", function() {
 
+    //save the link stored in data attribute "moveGif" in a temp variable
     var temp = $(this).data("moveGif");
+
+    //replace data-moveGif with the link stored in the src attribute
     $(this).data("moveGif", $(this).attr("src"));
+
+    //move the link in temp into src
     $(this).attr("src", temp);
 
 });
