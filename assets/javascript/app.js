@@ -62,14 +62,17 @@ $(document).on("click", ".button", function() {
             newGif.data("moveGif", response.data[i].images.fixed_height.url);
             
             //Append the still giphy image to the section tag
-            
             newGif.attr("src", response.data[i].images.fixed_height_still.url);
-            
-            //Append the giphy rating
             
             //Append newGif to newSection
             newSection.append(newGif);
+            
+            //Append the giphy rating
+            newSection.append($("<h3>").text("Rating: " + response.data[i].rating));
 
+            //Append a horizonal reference to newSection
+            newSection.append($("<hr>"));
+            
             //Append the newSection to #gifs
             $("#gifs").append(newSection);
         }
