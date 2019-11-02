@@ -8,6 +8,7 @@ var apiKey = "116WLag9WzHVmZuA8ZFkWR4Y84P6QQOe";
 var queryURL = ["https://api.giphy.com/v1/gifs/search?q=", "&limit=10&api_key="];
 
 function makeButtons() {
+    console.log("makeButtons() was executed");
 
     //Create a for loop to iterate through topics
     for (var i = 0; i < animals.length; i++) {
@@ -72,7 +73,7 @@ $(document).on("click", ".button", function() {
 
             //Append a horizonal reference to newSection
             newSection.append($("<hr>"));
-            
+
             //Append the newSection to #gifs
             $("#gifs").append(newSection);
         }
@@ -80,11 +81,19 @@ $(document).on("click", ".button", function() {
 });
 
 //Create an onClick event for the submit
+$("#submit").on("click", function(event) {
 
+    //prevent the submit button from reloading the page
+    event.preventDefault();
+
+    console.log("submit onClick() is executed");
+    
     //add #addMe.val() to the topics array
-
-    //call NEWBUTTONS()
-
+    animals.push($("#addMe").val());
+    
+    //call makeButtons()
+    makeButtons();
+})
 // Create an OnClick event for the giphy images
 $(document).on("click", ".gif", function() {
 
