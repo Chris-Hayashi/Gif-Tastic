@@ -90,7 +90,9 @@ $("#submit").on("click", function(event) {
     animals.push($("#addMe").val());
     
     //call makeButtons()
-    makeButtons();
+    if (animals[0] !== "") {
+        makeButtons();
+    }    
 })
 // Create an OnClick event for the giphy images
 $(document).on("click", ".gif", function() {

@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+}
+
+#submit {
+    cursor: pointer;
+}
+
+.button {
+    cursor: pointer;
+}
