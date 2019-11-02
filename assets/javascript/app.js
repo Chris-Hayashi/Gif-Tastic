@@ -8,7 +8,6 @@ var apiKey = "116WLag9WzHVmZuA8ZFkWR4Y84P6QQOe";
 var queryURL = ["https://api.giphy.com/v1/gifs/search?q=", "&limit=10&api_key="];
 
 function makeButtons() {
-    console.log("makeButtons() was executed");
 
     //Create a for loop to iterate through topics
     for (var i = 0; i < animals.length; i++) {
@@ -47,8 +46,6 @@ $(document).on("click", ".button", function() {
         url: queryURL.join(animal) + apiKey,
         method: "GET"
     }).then(function(response) {
-
-        console.log(response);
         
         //Create a for loop iterating 10 times
         for (var i = 0; i < 10; i++){
@@ -88,8 +85,6 @@ $("#submit").on("click", function(event) {
 
     //prevent the submit button from reloading the page
     event.preventDefault();
-
-    console.log("submit onClick() is executed");
     
     //add #addMe.val() to the topics array
     animals.push($("#addMe").val());
@@ -105,8 +100,6 @@ $(document).on("click", ".gif", function() {
     $(this).attr("src", temp);
 
 });
-
-
 
 
 makeButtons();
