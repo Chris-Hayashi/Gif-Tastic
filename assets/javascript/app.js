@@ -36,6 +36,9 @@ function makeButtons() {
 //Create an onClick event for the buttons
 $(document).on("click", ".button", function() {
 
+    //clear the current gifs in "#gifs" div tag
+    $("#gifs").empty();
+
     //Create a variable equal to the value of the button clicked
     var animal = $(this).val();
 
