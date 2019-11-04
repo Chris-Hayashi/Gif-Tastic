@@ -1,11 +1,28 @@
 body {
-    background-color: black;
+    /* background-color: black; */
 }
 
-#submit {
-    cursor: pointer;
+
+#buttons {
+    /* display: inline-block; */
+}
+
+#gifs {
+    display: inline-block;
+
+    /* justify-content: space-between; */
+}
+section {
+    position: relative;
+    float: left;
+    margin-right: 1em;
 }
 
 .button {
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+#submit {
     cursor: pointer;
 }
