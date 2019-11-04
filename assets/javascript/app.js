@@ -22,7 +22,7 @@ function makeButtons() {
         newButton.text(animals[i]);
         
         //give each button a class i.e. button1, button2, etc.
-        newButton.addClass("button");
+        newButton.addClass("button " + String(animals[i]));
         
         //Append the button to #buttons
         $("#buttons").append(newButton);
@@ -91,7 +91,9 @@ $("#submit").on("click", function(event) {
     
     //call makeButtons()
     if (animals[0] !== "") {
-        makeButtons();
+
+        if(!$(".button." + String(animals[0])).length)
+            makeButtons();
     }    
 })
 // Create an OnClick event for the giphy images
