@@ -11,7 +11,7 @@ Technologies Used: Visual Studio Code, Google Chrome, Git Bash
 Screenshots of the code:
 
     index.html:
-        1) ![](assets/images/html1.png)
+        1) ![html1](assets/images/html1.png)
     
     style.css:
         1) ![css1](images/css1.png)
