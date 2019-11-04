@@ -16,8 +16,7 @@ Screenshots of the code:
     style.css:
 ![css1](assets/images/css1.png)
 
-<<<<<<< HEAD
-    app.js:
+    app.js
 ![js1](assets/images/js1.png)
 
 ![js2](assets/images/js2.png)
@@ -25,10 +24,3 @@ Screenshots of the code:
 ![js3](assets/images/js3.png)
 
 ![js4](assets/images/js4.png)
-=======
-    app.js
-        1) ![js1](images/js1.png)
-        2) ![js2](images/js2.png)
-        3) ![js3](images/js3.png)
-        4) ![js4](images/js4.png)
->>>>>>> 730aac62cec03f062aeabadb8e150d5e85d93e39
