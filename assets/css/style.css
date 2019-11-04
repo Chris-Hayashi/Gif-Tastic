@@ -6,20 +6,10 @@ html {
     background-size: cover;
 }
 
-body {
-    /* background-color: black; */
-}
-
-
-#buttons {
-    /* display: inline-block; */
-}
-
 #gifs {
     display: inline-block;
-
-    /* justify-content: space-between; */
 }
+
 section {
     position: relative;
     float: left;
